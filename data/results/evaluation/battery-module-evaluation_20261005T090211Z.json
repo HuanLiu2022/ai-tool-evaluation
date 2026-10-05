@@ -1,0 +1,401 @@
+{
+  "document_id": "fictional_battery_module_spec_validation",
+  "document_title": "Battery Module Technical Specification and Validation Report",
+  "run_id": "20261005T090211Z_bdc39d95",
+  "total_fields": 15,
+  "metrics": {
+    "extraction_accuracy": {
+      "correct_core_values": 15,
+      "total_fields": 15,
+      "score": 1.0
+    },
+    "completeness": {
+      "score": 0.13333333333333333,
+      "score_method": "complete=1, partially_complete=0.5, incomplete=0; mean across fields",
+      "status_counts": {
+        "complete": 1,
+        "partially_complete": 2,
+        "incomplete": 12
+      }
+    },
+    "source_correctness": {
+      "correct_source_references": 14,
+      "total_fields": 15,
+      "score": 0.9333333333333333,
+      "comparison": "section ID and case-insensitive section title must both match"
+    },
+    "latency": {
+      "end_to_end_seconds": 107.97967562510166,
+      "model_request_seconds": 107.60689325002022
+    }
+  },
+  "fields": [
+    {
+      "field_id": "production_nominal_energy",
+      "field_name": "Production nominal energy",
+      "expected_value": 5.12,
+      "model_value": "5.12 kWh",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "nominal rating",
+        "Revision C production scope"
+      ],
+      "expected_source": {
+        "section_id": "3.2",
+        "section_title": "Rated Energy and Capacity"
+      },
+      "model_source": {
+        "section_id": "3.2",
+        "section_title": "Rated Energy and Capacity"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "production_nominal_voltage",
+      "field_name": "Production nominal voltage",
+      "expected_value": 51.2,
+      "model_value": "51.2 V DC",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "nominal rating",
+        "DC terminal context"
+      ],
+      "expected_source": {
+        "section_id": "3.1",
+        "section_title": "Electrical Ratings"
+      },
+      "model_source": {
+        "section_id": "3.1",
+        "section_title": "Electrical Ratings"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "continuous_discharge_current",
+      "field_name": "Continuous discharge current",
+      "expected_value": 100,
+      "model_value": "100 A",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "continuous limit",
+        "BMS and thermal conditions"
+      ],
+      "expected_source": {
+        "section_id": "3.4",
+        "section_title": "Continuous Current Limits"
+      },
+      "model_source": {
+        "section_id": "3.4",
+        "section_title": "Continuous Current Limits"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "maximum_charge_current",
+      "field_name": "Maximum charge current",
+      "expected_value": 50,
+      "model_value": "50 A",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "maximum continuous charge limit",
+        "below-zero charging restriction"
+      ],
+      "expected_source": {
+        "section_id": "3.5",
+        "section_title": "Charge Limits"
+      },
+      "model_source": {
+        "section_id": "3.5",
+        "section_title": "Charge Limits"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "usable_soc_window",
+      "field_name": "Usable SOC window",
+      "expected_value": {
+        "minimum": 10,
+        "maximum": 95
+      },
+      "model_value": "10% through 95%",
+      "value_correct": true,
+      "completeness_status": "partially_complete",
+      "present_context": [],
+      "missing_context": [
+        "inclusive controller endpoints",
+        "normal module window"
+      ],
+      "expected_source": {
+        "section_id": "3.2",
+        "section_title": "Rated Energy and Capacity"
+      },
+      "model_source": {
+        "section_id": "3.3",
+        "section_title": "Voltage limits and SOC interpretation"
+      },
+      "source_correct": false
+    },
+    {
+      "field_id": "operating_temperature",
+      "field_name": "Operating temperature",
+      "expected_value": {
+        "minimum": -20,
+        "maximum": 55
+      },
+      "model_value": "-20°C to 55°C",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "ambient operating condition",
+        "derating at range endpoints"
+      ],
+      "expected_source": {
+        "section_id": "7.1",
+        "section_title": "Operating Environment"
+      },
+      "model_source": {
+        "section_id": "7.1",
+        "section_title": "Operating Environment"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "storage_temperature",
+      "field_name": "Storage temperature",
+      "expected_value": {
+        "minimum": -30,
+        "maximum": 60
+      },
+      "model_value": "-30°C to 60°C",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "storage-specific condition",
+        "module isolated condition"
+      ],
+      "expected_source": {
+        "section_id": "7.2",
+        "section_title": "Storage and Transport Conditions"
+      },
+      "model_source": {
+        "section_id": "7.2",
+        "section_title": "Storage and Transport Conditions"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "maximum_cell_temperature_during_operation",
+      "field_name": "Maximum cell temperature during operation",
+      "expected_value": 60,
+      "model_value": "60°C",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "maximum permitted cell temperature",
+        "during-operation condition"
+      ],
+      "expected_source": {
+        "section_id": "4.3",
+        "section_title": "Thermal Control Limits"
+      },
+      "model_source": {
+        "section_id": "4.3",
+        "section_title": "Thermal Control Limits"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "maximum_cell_to_cell_temperature_spread",
+      "field_name": "Maximum cell-to-cell temperature spread",
+      "expected_value": 8,
+      "model_value": "8°C",
+      "value_correct": true,
+      "completeness_status": "partially_complete",
+      "present_context": [],
+      "missing_context": [
+        "steady-load condition",
+        "coolant condition"
+      ],
+      "expected_source": {
+        "section_id": "4.4",
+        "section_title": "Temperature Uniformity Requirement"
+      },
+      "model_source": {
+        "section_id": "4.4",
+        "section_title": "Temperature Uniformity Requirement"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "module_mass",
+      "field_name": "Module mass",
+      "expected_value": 42.0,
+      "model_value": "42.0 kg",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "maximum mass limit",
+        "dry-state condition"
+      ],
+      "expected_source": {
+        "section_id": "5.3",
+        "section_title": "Mass Properties"
+      },
+      "model_source": {
+        "section_id": "5.3",
+        "section_title": "Mass Properties"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "enclosure_ingress_protection",
+      "field_name": "Enclosure ingress protection",
+      "expected_value": "IP67",
+      "model_value": "IP67",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "assembled module is correctly sealed"
+      ],
+      "expected_source": {
+        "section_id": "5.5",
+        "section_title": "Enclosure and Environmental Protection"
+      },
+      "model_source": {
+        "section_id": "5.5",
+        "section_title": "Enclosure and Environmental Protection"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "minimum_isolation_resistance",
+      "field_name": "Minimum isolation resistance",
+      "expected_value": {
+        "minimum_resistance": 500,
+        "test_voltage": 500
+      },
+      "model_value": "500 Ω/V",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "specified DC test voltage"
+      ],
+      "expected_source": {
+        "section_id": "6.2",
+        "section_title": "Electrical Isolation"
+      },
+      "model_source": {
+        "section_id": "6.2",
+        "section_title": "Electrical Isolation"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "vibration_validation_profile",
+      "field_name": "Vibration validation profile",
+      "expected_value": {
+        "frequency_range": {
+          "minimum": 10,
+          "maximum": 500,
+          "unit": "Hz"
+        },
+        "acceleration": {
+          "value": 3.0,
+          "unit": "g RMS"
+        },
+        "duration_per_axis": {
+          "value": 8,
+          "unit": "h"
+        }
+      },
+      "model_value": "10–500 Hz, 3.0 g RMS for 8 hours per axis",
+      "value_correct": true,
+      "completeness_status": "complete",
+      "present_context": [
+        "frequency range",
+        "vibration severity",
+        "duration and axes"
+      ],
+      "missing_context": [],
+      "expected_source": {
+        "section_id": "8.3",
+        "section_title": "Vibration Validation"
+      },
+      "model_source": {
+        "section_id": "8.3",
+        "section_title": "Vibration Validation"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "cycle_life_acceptance_criterion",
+      "field_name": "Cycle-life acceptance criterion",
+      "expected_value": {
+        "minimum_equivalent_full_cycles": 2000,
+        "minimum_retained_capacity_percent": 80
+      },
+      "model_value": "at least 2,000 equivalent full cycles",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [],
+      "missing_context": [
+        "retained-capacity endpoint"
+      ],
+      "expected_source": {
+        "section_id": "8.5",
+        "section_title": "Cycle-Life Acceptance"
+      },
+      "model_source": {
+        "section_id": "8.5",
+        "section_title": "Cycle-Life Acceptance"
+      },
+      "source_correct": true
+    },
+    {
+      "field_id": "known_issue_soc_indication_lag",
+      "field_name": "Known issue: SOC indication lag",
+      "expected_value": {
+        "behavior": "Capacity indication may temporarily lag actual capacity by up to 4 percentage points after rapid load changes.",
+        "protection_impact": "No impact on protection limits, cell monitoring, or independent BMS fault response."
+      },
+      "model_value": "up to 4 percentage points, protection behavior is not affected",
+      "value_correct": true,
+      "completeness_status": "incomplete",
+      "present_context": [
+        "protection impact"
+      ],
+      "missing_context": [
+        "rapid-load-change trigger"
+      ],
+      "expected_source": {
+        "section_id": "9.2",
+        "section_title": "SOC Estimation Transient"
+      },
+      "model_source": {
+        "section_id": "9.2",
+        "section_title": "SOC Estimation Transient"
+      },
+      "source_correct": true
+    }
+  ],
+  "assumptions": [
+    "Core-value scoring compares numeric components or the exact classification; units and qualifiers are scored separately under completeness.",
+    "Completeness checks only model value, unit, qualifier, and conditions. It does not count field names, IDs, or citations as answer context.",
+    "A critical missing context item makes a field incomplete; if all critical items are present but supporting context is missing, it is partially complete.",
+    "Source correctness requires both the authoritative section ID and normalized title to match."
+  ]
+}

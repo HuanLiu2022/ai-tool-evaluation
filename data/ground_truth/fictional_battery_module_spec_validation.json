@@ -1,0 +1,271 @@
+{
+  "document_id": "fictional_battery_module_spec_validation",
+  "document_title": "Battery Module Technical Specification and Validation Report",
+  "document_revision": "C",
+  "configuration_scope": "production release",
+  "fields": [
+    {
+      "field_id": "production_nominal_energy",
+      "field_name": "Production nominal energy",
+      "value": 5.12,
+      "value_type": "number",
+      "unit": "kWh",
+      "qualifier": "nominal",
+      "conditions": ["Revision C production configuration"],
+      "authoritative_source": {
+        "section_id": "3.2",
+        "section_title": "Rated Energy and Capacity"
+      },
+      "accepted_equivalents": ["5.12 kilowatt-hours"],
+      "scoring_notes": "Accept the Revision C nominal rating. Do not accept Revision A's 4.80 kWh preliminary estimate or the 5.06 kWh measured sample result."
+    },
+    {
+      "field_id": "production_nominal_voltage",
+      "field_name": "Production nominal voltage",
+      "value": 51.2,
+      "value_type": "number",
+      "unit": "V DC",
+      "qualifier": "nominal",
+      "conditions": ["Revision C production configuration", "External DC terminals"],
+      "authoritative_source": {
+        "section_id": "3.1",
+        "section_title": "Electrical Ratings"
+      },
+      "accepted_equivalents": ["51.2 V", "51.2 volts DC"],
+      "scoring_notes": "Do not accept the Revision A 48.0 V historical value or the 50.9 V measured operating point."
+    },
+    {
+      "field_id": "continuous_discharge_current",
+      "field_name": "Continuous discharge current",
+      "value": 100,
+      "value_type": "number",
+      "unit": "A",
+      "qualifier": "maximum continuous",
+      "conditions": ["Revision C production configuration", "Subject to BMS-reported limits and Section 7 operating conditions"],
+      "authoritative_source": {
+        "section_id": "3.4",
+        "section_title": "Continuous Current Limits"
+      },
+      "accepted_equivalents": ["100 amperes continuous"],
+      "scoring_notes": "Do not report the 120 A short-duration allowance as the continuous rating, or the Revision B 15-second characterization pulse as a production limit."
+    },
+    {
+      "field_id": "maximum_charge_current",
+      "field_name": "Maximum charge current",
+      "value": 50,
+      "value_type": "number",
+      "unit": "A",
+      "qualifier": "maximum continuous",
+      "conditions": ["Revision C production configuration", "Charging prohibited below 0 °C ambient", "Subject to lower BMS-reported limit"],
+      "authoritative_source": {
+        "section_id": "3.5",
+        "section_title": "Charge Limits"
+      },
+      "accepted_equivalents": ["50 amperes"],
+      "scoring_notes": "Do not substitute the 40 A validation current or Revision B's experimental 60 A setting."
+    },
+    {
+      "field_id": "usable_soc_window",
+      "field_name": "Usable SOC window",
+      "value": {
+        "minimum": 10,
+        "maximum": 95
+      },
+      "value_type": "range",
+      "unit": "% SOC",
+      "qualifier": "normal service usable window; endpoints inclusive for controller reporting",
+      "conditions": ["Revision C production configuration"],
+      "authoritative_source": {
+        "section_id": "3.2",
+        "section_title": "Rated Energy and Capacity"
+      },
+      "accepted_equivalents": ["10–95%", "10% to 95% SOC"],
+      "scoring_notes": "Do not use the cell-level 5–100% characterization envelope; it is not the module's normal usable SOC window."
+    },
+    {
+      "field_id": "operating_temperature",
+      "field_name": "Operating temperature",
+      "value": {
+        "minimum": -20,
+        "maximum": 55
+      },
+      "value_type": "range",
+      "unit": "°C ambient",
+      "qualifier": "general operating range",
+      "conditions": ["Revision C production configuration", "Full rated current is not necessarily available at range endpoints", "Charging prohibited below 0 °C ambient"],
+      "authoritative_source": {
+        "section_id": "7.1",
+        "section_title": "Operating Environment"
+      },
+      "accepted_equivalents": ["−20 to 55 °C ambient", "-20°C to 55°C ambient"],
+      "scoring_notes": "Do not confuse the operating range with the −30 to 60 °C storage range or the separate below-freezing charging restriction."
+    },
+    {
+      "field_id": "storage_temperature",
+      "field_name": "Storage temperature",
+      "value": {
+        "minimum": -30,
+        "maximum": 60
+      },
+      "value_type": "range",
+      "unit": "°C ambient",
+      "qualifier": "storage, module isolated",
+      "conditions": ["Revision C production configuration", "Not an operating range"],
+      "authoritative_source": {
+        "section_id": "7.2",
+        "section_title": "Storage and Transport Conditions"
+      },
+      "accepted_equivalents": ["−30 to 60 °C", "-30°C to 60°C"],
+      "scoring_notes": "Do not report the −20 to 55 °C operating range or Revision B's 65 °C powered-down deviation exposure as the storage specification."
+    },
+    {
+      "field_id": "maximum_cell_temperature_during_operation",
+      "field_name": "Maximum cell temperature during operation",
+      "value": 60,
+      "value_type": "number",
+      "unit": "°C",
+      "qualifier": "maximum permitted cell temperature",
+      "conditions": ["During operation", "Revision C production configuration"],
+      "authoritative_source": {
+        "section_id": "4.3",
+        "section_title": "Thermal Control Limits"
+      },
+      "accepted_equivalents": ["60 degrees Celsius"],
+      "scoring_notes": "Do not substitute the approximately 45 °C normal control target or the 58 °C measured shutdown result."
+    },
+    {
+      "field_id": "maximum_cell_to_cell_temperature_spread",
+      "field_name": "Maximum cell-to-cell temperature spread",
+      "value": 8,
+      "value_type": "number",
+      "unit": "°C",
+      "qualifier": "maximum allowed steady-state spread",
+      "conditions": ["Steady continuous load", "Specified coolant conditions", "After defined stabilization period"],
+      "authoritative_source": {
+        "section_id": "4.4",
+        "section_title": "Temperature Uniformity Requirement"
+      },
+      "accepted_equivalents": ["8 degrees Celsius maximum"],
+      "scoring_notes": "Do not use the Revision B 10 °C result or Revision C's 6.2 °C validation measurement as the requirement."
+    },
+    {
+      "field_id": "module_mass",
+      "field_name": "Module mass",
+      "value": 42.0,
+      "value_type": "number",
+      "unit": "kg",
+      "qualifier": "maximum",
+      "conditions": ["Revision C production configuration", "Dry state", "Includes enclosure and internal hardware; excludes coolant retained in external host loop and external brackets"],
+      "authoritative_source": {
+        "section_id": "5.3",
+        "section_title": "Mass Properties"
+      },
+      "accepted_equivalents": ["42 kg maximum", "not more than 42.0 kg"],
+      "scoring_notes": "This is the specified maximum, not Revision B's 39.5 kg prototype mass or the 41.6 kg measured Revision C sample."
+    },
+    {
+      "field_id": "enclosure_ingress_protection",
+      "field_name": "Enclosure ingress protection",
+      "value": "IP67",
+      "value_type": "classification",
+      "unit": null,
+      "qualifier": "assembled module rating",
+      "conditions": ["Revision C production configuration", "All specified seals, connector caps, and service closures correctly installed"],
+      "authoritative_source": {
+        "section_id": "5.5",
+        "section_title": "Enclosure and Environmental Protection"
+      },
+      "accepted_equivalents": ["IP67 for the correctly sealed assembled module"],
+      "scoring_notes": "Do not report the IP65 signal-connector component rating, the accessory manifold's IP6K9K marking, or the unsealed lab fixture result as the module rating."
+    },
+    {
+      "field_id": "minimum_isolation_resistance",
+      "field_name": "Minimum isolation resistance",
+      "value": {
+        "minimum_resistance": 500,
+        "test_voltage": 500
+      },
+      "value_type": "compound",
+      "unit": {
+        "minimum_resistance": "Ω/V",
+        "test_voltage": "V DC"
+      },
+      "qualifier": "minimum acceptance criterion at specified test voltage",
+      "conditions": ["Assembled production module", "Live circuitry to conductive enclosure", "After specified stabilization interval"],
+      "authoritative_source": {
+        "section_id": "6.2",
+        "section_title": "Electrical Isolation"
+      },
+      "accepted_equivalents": ["at least 500 Ω/V, tested at 500 V DC"],
+      "scoring_notes": "Keep the quantities distinct: 500 Ω/V is the normalized minimum resistance criterion and 500 V DC is the applied test voltage. Do not use the 1.8 MΩ measurement or Revision A's preliminary 1,000 Ω/V objective as ground truth."
+    },
+    {
+      "field_id": "vibration_validation_profile",
+      "field_name": "Vibration validation profile",
+      "value": {
+        "frequency_range": {
+          "minimum": 10,
+          "maximum": 500,
+          "unit": "Hz"
+        },
+        "acceleration": {
+          "value": 3.0,
+          "unit": "g RMS"
+        },
+        "duration_per_axis": {
+          "value": 8,
+          "unit": "h"
+        }
+      },
+      "value_type": "compound",
+      "unit": null,
+      "qualifier": "Revision C mounted module validation profile",
+      "conditions": ["Production attachment points", "Representative harness restraint", "Each of three axes"],
+      "authoritative_source": {
+        "section_id": "8.3",
+        "section_title": "Vibration Validation"
+      },
+      "accepted_equivalents": ["10–500 Hz, 3.0 g RMS, 8 hours per axis"],
+      "scoring_notes": "Do not substitute the 5–200 Hz, 1.5 g RMS shipping packaging profile or Revision B's 5-hour-per-axis prototype campaign."
+    },
+    {
+      "field_id": "cycle_life_acceptance_criterion",
+      "field_name": "Cycle-life acceptance criterion",
+      "value": {
+        "minimum_equivalent_full_cycles": 2000,
+        "minimum_retained_capacity_percent": 80
+      },
+      "value_type": "compound",
+      "unit": {
+        "minimum_equivalent_full_cycles": "EFC",
+        "minimum_retained_capacity_percent": "% of initial measured capacity"
+      },
+      "qualifier": "acceptance endpoint",
+      "conditions": ["Defined reference profile", "Controlled temperature", "EFC normalized by accumulated discharge throughput"],
+      "authoritative_source": {
+        "section_id": "8.5",
+        "section_title": "Cycle-Life Acceptance"
+      },
+      "accepted_equivalents": ["at least 2,000 equivalent full cycles before capacity falls below 80% of initial capacity"],
+      "scoring_notes": "This is the acceptance criterion, not the interim result of 1,250 EFC at 91% capacity and not the obsolete 3,000 EFC planning objective."
+    },
+    {
+      "field_id": "known_issue_soc_indication_lag",
+      "field_name": "Known issue: SOC indication lag",
+      "value": {
+        "behavior": "Capacity indication may temporarily lag actual capacity by up to 4 percentage points after rapid load changes.",
+        "protection_impact": "No impact on protection limits, cell monitoring, or independent BMS fault response."
+      },
+      "value_type": "qualitative",
+      "unit": "percentage points",
+      "qualifier": "Revision C production configuration known issue",
+      "conditions": ["After rapid load changes", "Estimator converges as current and voltage conditions stabilize"],
+      "authoritative_source": {
+        "section_id": "9.2",
+        "section_title": "SOC Estimation Transient"
+      },
+      "accepted_equivalents": ["SOC/capacity indication can lag by up to 4 percentage points after rapid load changes without affecting protection limits"],
+      "scoring_notes": "Do not report Revision B's separate up-to-7-point estimator lag under repeated high-current steps; it belongs to the superseded prototype calibration and sensing harness."
+    }
+  ]
+}

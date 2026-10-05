@@ -150,7 +150,9 @@ activemq-data/
 *.sage.py
 
 # Environments
+.DS_Store
 .env
+.env.*
 .envrc
 .venv
 env/

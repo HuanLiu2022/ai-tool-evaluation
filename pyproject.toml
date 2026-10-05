@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-tool-evaluation"
+version = "0.1.0"
+description = "Local evaluation project for technical document analysis workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110,<1.0",
+    "httpx>=0.27,<1.0",
+    "pymupdf>=1.24,<2.0",
+    "python-multipart>=0.0.9,<1.0",
+    "uvicorn[standard]>=0.29,<1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<9.0"]
+
+[tool.setuptools.packages.find]
+include = ["app*", "evaluation*"]
+
+[tool.setuptools.package-data]
+app = ["prompts/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+pythonpath = ["."]

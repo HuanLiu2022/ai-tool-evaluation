@@ -1,0 +1,256 @@
+{
+  "document_id": "battery-module-technical-specification-validation-report",
+  "document_title": "Battery Module Technical Specification and Validation",
+  "document_revision": null,
+  "configuration_scope": null,
+  "analysis": {
+    "fields": [
+      {
+        "field_id": "production_nominal_energy",
+        "field_name": "production nominal energy",
+        "value": "5.12 kWh",
+        "unit": "kilowatt-hours",
+        "qualifier": null,
+        "conditions": [
+          "Section 3.2"
+        ],
+        "source_section": {
+          "section_id": "3.2",
+          "section_title": "Rated Energy and Capacity"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "production_nominal_voltage",
+        "field_name": "production nominal voltage",
+        "value": "51.2 V DC",
+        "unit": "volts DC",
+        "qualifier": null,
+        "conditions": [
+          "Section 3.1"
+        ],
+        "source_section": {
+          "section_id": "3.1",
+          "section_title": "Electrical Ratings"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "continuous_discharge_current",
+        "field_name": "continuous discharge current",
+        "value": "100 A",
+        "unit": "amperes",
+        "qualifier": null,
+        "conditions": [
+          "Section 3.4"
+        ],
+        "source_section": {
+          "section_id": "3.4",
+          "section_title": "Continuous Current Limits"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "maximum_charge_current",
+        "field_name": "maximum charge current",
+        "value": "50 A",
+        "unit": "amperes",
+        "qualifier": null,
+        "conditions": [
+          "Section 3.5"
+        ],
+        "source_section": {
+          "section_id": "3.5",
+          "section_title": "Charge Limits"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "usable_soc_window",
+        "field_name": "usable state-of-charge window",
+        "value": "10% through 95%",
+        "unit": "%",
+        "qualifier": null,
+        "conditions": [
+          "Section 3.3"
+        ],
+        "source_section": {
+          "section_id": "3.3",
+          "section_title": "Voltage limits and SOC interpretation"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "operating_temperature",
+        "field_name": "operating temperature range",
+        "value": "-20°C to 55°C",
+        "unit": "degrees Celsius",
+        "qualifier": null,
+        "conditions": [
+          "Section 7.1"
+        ],
+        "source_section": {
+          "section_id": "7.1",
+          "section_title": "Operating Environment"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "storage_temperature",
+        "field_name": "storage temperature range",
+        "value": "-30°C to 60°C",
+        "unit": "degrees Celsius",
+        "qualifier": null,
+        "conditions": [
+          "Section 7.2"
+        ],
+        "source_section": {
+          "section_id": "7.2",
+          "section_title": "Storage and Transport Conditions"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "maximum_cell_temperature_during_operation",
+        "field_name": "maximum cell temperature during operation",
+        "value": "60°C",
+        "unit": "degrees Celsius",
+        "qualifier": null,
+        "conditions": [
+          "Section 4.3"
+        ],
+        "source_section": {
+          "section_id": "4.3",
+          "section_title": "Thermal Control Limits"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "maximum_cell_to_cell_temperature_spread",
+        "field_name": "maximum cell-to-cell temperature spread",
+        "value": "8°C",
+        "unit": "degrees Celsius",
+        "qualifier": null,
+        "conditions": [
+          "Section 4.4"
+        ],
+        "source_section": {
+          "section_id": "4.4",
+          "section_title": "Temperature Uniformity Requirement"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "module_mass",
+        "field_name": "module mass limit or specification",
+        "value": "42.0 kg",
+        "unit": "kilograms",
+        "qualifier": null,
+        "conditions": [
+          "Section 5.3"
+        ],
+        "source_section": {
+          "section_id": "5.3",
+          "section_title": "Mass Properties"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "enclosure_ingress_protection",
+        "field_name": "assembled enclosure ingress-protection rating and conditions",
+        "value": "IP67",
+        "unit": null,
+        "qualifier": null,
+        "conditions": [
+          "Section 5.5"
+        ],
+        "source_section": {
+          "section_id": "5.5",
+          "section_title": "Enclosure and Environmental Protection"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "minimum_isolation_resistance",
+        "field_name": "minimum isolation-resistance criterion and test-voltage context",
+        "value": "500 Ω/V",
+        "unit": "Ω/V",
+        "qualifier": null,
+        "conditions": [
+          "Section 6.2"
+        ],
+        "source_section": {
+          "section_id": "6.2",
+          "section_title": "Electrical Isolation"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "vibration_validation_profile",
+        "field_name": "module vibration validation profile, including frequency, severity, duration, and axes",
+        "value": "10–500 Hz, 3.0 g RMS for 8 hours per axis",
+        "unit": null,
+        "qualifier": null,
+        "conditions": [
+          "Section 8.3"
+        ],
+        "source_section": {
+          "section_id": "8.3",
+          "section_title": "Vibration Validation"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "cycle_life_acceptance_criterion",
+        "field_name": "cycle-life acceptance criterion",
+        "value": "at least 2,000 equivalent full cycles",
+        "unit": null,
+        "qualifier": null,
+        "conditions": [
+          "Section 8.5"
+        ],
+        "source_section": {
+          "section_id": "8.5",
+          "section_title": "Cycle-Life Acceptance"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      },
+      {
+        "field_id": "known_issue_soc_indication_lag",
+        "field_name": "current-configuration SOC/capacity indication issue and whether protection behavior is affected",
+        "value": "up to 4 percentage points, protection behavior is not affected",
+        "unit": "%",
+        "qualifier": "SOC lag, protection behavior unaffected",
+        "conditions": [
+          "Section 9.2"
+        ],
+        "source_section": {
+          "section_id": "9.2",
+          "section_title": "SOC Estimation Transient"
+        },
+        "confidence": 1.0,
+        "uncertainty": null
+      }
+    ],
+    "summary": "This document establishes the technical envelope and validation status of the BM-51 battery module."
+  },
+  "latency_seconds": 107.97967562510166,
+  "model_latency_seconds": 107.60689325002022,
+  "run_id": "20261005T090211Z_bdc39d95",
+  "raw_output_file": "battery-module-technical-specification-validation-report_20261005T090211Z_bdc39d95_raw.txt",
+  "validated_output_file": "battery-module-technical-specification-validation-report_20261005T090211Z_bdc39d95_validated.json"
+}
